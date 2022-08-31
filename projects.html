@@ -2,15 +2,49 @@
 layout: page
 title: Projects
 ---
+<template id="project">
+    <div class="item">
+        <a class="url" href="">
+            <aside><time datetime=""></time></aside>
+            <h3 class="title"></h3>
+            <h5></h5>
+        </a>
+    </div>
+</template>
+
+<script>
+    getText("{{ site.projects-json.json }}");
+    
+    async function getText(file) {
+        let myObject = await fetch(file);
+        let script = await myObject.json();
+
+        var temp, item, a, i;
+        temp = document.getElementsByTagName("template")[0];
+        item = temp.content.querySelector("div")
+        
+        for (let index = 0; index < script.length; index++) {
+            const element = script[index];
+
+            console.log(element['html_url'])
+            a = document.importNode(item, true)
+            a.querySelector("a").href = element['html_url']
+            a.querySelector("h3").textContent += element['name']
+            a.querySelector("h5").innerText = element['language']
+            let z = a.querySelector('aside').querySelector('time')
+            z.textContent += element['updated_at']
+            z.dateTime = element['updated_at']
+            document.body.getElementsByTagName('section')[0].appendChild(a)
+        }
+    }
+
+
+    </script>
+
 <section class="list">
     {% for post in site.posts %}
         {% if post.projects %}
-            <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ site.url }}{{ post.url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                    <h3 class="title">{{ post.title }}</h3>
-                </a>
-            </div>
+
         {% endif %}
     {% endfor %}
 </section>

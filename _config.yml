@@ -7,8 +7,8 @@ description: A Portfolio about my Projects involving python, data and etc.
 
 # if it's an external image, update below for true
 # better with square images
-external-image: false
-picture: assets/images/IMG_0149.jpg
+external-image: true
+picture: https://github.com/Cormac-Flanagan.png 
 
 # your site color theme, true for dark theme, 
 # false to light theme, auto to switch with system.
@@ -17,10 +17,10 @@ dark-theme: auto
 # If you want to include your resume, set to true
 # and specify source (external or local).
 resume: true
-resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-external: false
+resume-url: /assets/Resume.pdf
 
-url: https://sergiokopplin.github.io/Cormac-Flanagan
+url: https:/Cormac-Flanagan.github.io/Cormac-Flanagan
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
@@ -97,12 +97,18 @@ defaults:
       # can be overridden in the front matter for a specific post
       hidden: false
 
+
+projects-json:
+  json: https://api.github.com/users/cormac-flanagan/repos
+
+
 plugins:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
   - jemoji
   - jekyll-paginate-v2
+  - jekyll-get-json
 
 compress_html:
   ignore:
