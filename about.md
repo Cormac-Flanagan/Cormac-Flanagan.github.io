@@ -4,8 +4,9 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
+
 <video width="100%" controls align="centre">
-	<source src="../Assets/ZDS.mp4" type=video/mp4>
+	<source src="../Assets/ZDS.mp4" type="video/mp4">
 </video>
 
 <p>Hello</p>
