@@ -20,7 +20,7 @@ resume: true
 resume-external: false
 resume-url: /assets/Resume.pdf
 
-url: https:/Cormac-Flanagan.github.io
+url:
 # your url: https://USERNAME.github.io
 
 permalink: /:title/
