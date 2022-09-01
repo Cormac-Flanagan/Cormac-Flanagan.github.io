@@ -6,7 +6,7 @@ layout: page
 
 
 <video width="100%" controls align="centre">
-	<source src="../Assets/ZDS.mp4" type="video/mp4">
+	<source src="../assets/ZDS.mp4" type="video/mp4">
 </video>
 
 <p>Hello</p>
